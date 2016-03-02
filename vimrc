@@ -70,7 +70,7 @@ call neobundle#end()
 " Required:
 filetype plugin indent on
 NeoBundleCheck
-let mapleader = ","
+let mapleader = " "
 
 """ airline --------------------------------------------------------------------
 set laststatus=2
@@ -470,7 +470,12 @@ set number " line numbers
 set scrolloff=1 " Keep the cursor away from top/bottom
 set wildmode=longest,list " TAB completion (such as bash)
 set laststatus=2 " Always show a status bar
+set ignorecase " needed for smartcase
 set smartcase " Ignore case when search pattern is all lowercase
+	"/copyright      " Case insensitive
+	"/Copyright      " Case sensitive
+	"/copyright\C    " Case sensitive
+	"/Copyright\c    " Case insensitive
 set shiftwidth=4 " # of spaces of auto indent
 set softtabstop=4 " # of spaces of <TAB> key
 set tabstop=4 " # of spaces erased when deleting a <TAB>
@@ -479,6 +484,19 @@ set smarttab " 'siftwidth' in front of a line
 set noswapfile     " No swap files
 set nobackup       " No backups
 set nowritebackup
+
+" map <Leader>n <plug>NERDTreeTabsToggle<CR>
+" Go to tab by number
+" noremap <leader>1 1gt
+" noremap <leader>2 2gt
+" noremap <leader>3 3gt
+" noremap <leader>4 4gt
+" noremap <leader>5 5gt
+" noremap <leader>6 6gt
+" noremap <leader>7 7gt
+" noremap <leader>8 8gt
+" noremap <leader>9 9gt
+" noremap <leader>0 :tablast<cr>
 
 """ Vim-Indent-Guides ---------------------------------------------------------
 let g:indent_guides_auto_colors = 0
